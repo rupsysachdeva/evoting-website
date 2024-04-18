@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <script>
+        function validateForm() {
+            const aadhar_card_no = document.getElementById("aadhar_card_no").value;
+            const voter_id = document.getElementById("voter_id").value;
+            const phone_no = document.getElementById("phone_no").value;
+
+            if (aadhar_card_no.length !== 12 || isNaN(aadhar_card_no)) {
+                alert("Please Enter a 12-digit number for Aadhar Card");
+                return false;
+            }
+            if (voter_id.length !== 10 || isNaN(voter_id)) {
+                alert("Please Enter a 10-digit number for Voter ID");
+                return false;
+            }
+            if (phone_no.length !== 10 || isNaN(phone_no)) {
+                alert("Please Enter a 10-digit number for Phone Number");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <section class="container">
+        <header>Registration Form</header>
+        <form id="registrationForm" onsubmit="return validateForm()" method="post">
+            <div class="input-box">
+                <label for="full_name">Full Name *</label>
+                <input type="text" id="full_name" name="full_name" placeholder="Enter full name" autocomplete="off" required/>
+            </div>
+            <div class="input-box">
+                <label for="aadhar_card_no">Aadhar Card no. *</label>
+                <input type="text" id="aadhar_card_no" name="aadhar_card_no" placeholder="Enter 12 digit Aadhar Card no." pattern="[0-9]{12}" autocomplete="off" required/>
+            </div>
+            <div class="input-box">
+                <label for="voter_id">Voter ID *</label>
+                <input type="text" id="voter_id" name="voter_id" placeholder="Enter 10 digit number" autocomplete="off" required/>
+            </div>
+            <div class="column">
+                <div class="input-box">
+                    <label for="phone_no">Phone no. *</label>
+                    <input type="text" id="phone_no" name="phone_no" placeholder="Enter 10 digit number" autocomplete="off" required/>
+                </div>   
+                <div class="input-box">
+                    <label for="birth_date">Birth date *</label>
+                    <input type="date" id="birth_date" name="birth_date" placeholder="Minimum 18 years required" required/>
+                </div> 
+            </div>
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender" value="male" checked/>
+                        <label for="check-male">Male</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="check-female" name="gender" value="female"/>
+                        <label for="check-female">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-box address">
+                <label for="address_line1">Address</label>
+                <input type="text" id="address_line1" name="address_line1" placeholder="Street, Area" required/>
+                <input type="text" id="address_line2" name="address_line2" placeholder="State , Pincode" required/>
+                <input type="text" id="address_line3" name="address_line3" placeholder="Address Line 3"/>
+            </div>
+            <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;"></div>
+
+            <div class="alert alert-success" role="alert" id="success" style="display: none;"></div>
+            <button type="submit" >Submit</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set the background color to #05445E */
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #05445E;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Style the main container */
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Style the header */
+  .container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Style input labels */
+  .input-box label {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  /* Style text inputs */
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style radio buttons and labels */
+  .gender-label {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    background-color: #0074cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056a4;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 500px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+  

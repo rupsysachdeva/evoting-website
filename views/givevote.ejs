@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting Page</title>
+  <link rel="stylesheet" type="text/css" href="static/css/votes.css">
+  <style>
+    /* Add CSS styles for the image size */
+    .voting-container img {
+      max-width: 100px; /* Adjust the max-width as needed */
+      max-height: 100px; /* Adjust the max-height as needed */
+    }
+
+    .party-link.disabled {
+      color: gray;
+      pointer-events: none;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Add this code to display user's name and voter ID -->
+  <form action="/givevote" method="post">
+    <div class="user-info">
+      <h1>सत्यमेव जयते नानृतं सत्येन पन्था विततो देवयानः।<br> येनाक्रमंत्यृषयो ह्याप्तकामु यत्र तत्सत्यस्य परमं निधानम॥</h1>
+      <h3>Name: <%= user.full_name %></h3>
+      <h3>Voter ID: <%= user.voter_id %></h3>
+      <h2>Select a party to vote:</h2>
+    </div>
+
+    <div class="voting-container">
+      <table>
+        <tr>
+          <th>Party</th>
+          <th>Symbol</th>
+        </tr>
+        <!-- Fetch and display party data from the "group_" table -->
+        <% groupData.forEach(party => { %>
+          <tr>
+            <td><a href="#" class="party-link" data-partyname="<%= party.partyname %>"><%= party.partyname %></a></td>
+            <td><img src="data:image/png;base64, <%= party.partysymbol.toString('base64') %>"></td>
+          </tr>
+        <% }); %>
+      </table>
+      <p id="vote-message" style="display: none;">Your vote has been submitted.</p>
+      <a href="/" role="button">Logout</a>
+    </div>
+  </form>
+
+  <!-- Client-side JavaScript for voting -->
+  <!-- Add this script to the givevote.ejs file -->
+  <script>
+    let isVotingEnabled = true; // Flag to track if voting is enabled
+
+    const partyLinks = document.querySelectorAll('.party-link');
+  
+    partyLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (isVotingEnabled) {
+          isVotingEnabled = false; // Disable voting after one click
+          const partyName = this.getAttribute('data-partyname');
+          submitVote(partyName);
+  
+          // Add the 'disabled' class to all links
+          partyLinks.forEach(partyLink => {
+            partyLink.classList.add('disabled');
+          });
+        }
+      });
+    });
+  
+    function submitVote(party) {
+      // Make an AJAX request to associate the party name with the user's full_name
+      fetch('/associate-party', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ party: party }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'success') {
+            // Party association successful, you can display a message to the user
+            alert('You have voted for ' + party);
+            // Redirect to the homepage (home.ejs)
+            window.location.href = '/'; // Change '/home' to the actual URL of your homepage
+          }
+        })
+        .catch(error => {
+          console.error('Error associating party:', error);
+        });
+    }
+  </script>
+</body>
+</html>

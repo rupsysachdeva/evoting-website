@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: beige;
+    background-color: #05445E;
+    overflow:-moz-hidden-unscrollable;
+}
+
+.main, .nav1, .nav2, .banner, .page2 {
+    width: 100%;
+    background-color: white;
+}
+.nav1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 65px;
+    background-color: #05445E;
+    color: white;
+}
+
+.nav1 img {
+    position: relative;
+    right: 500px;
+    height: 100px;
+    width: 100px;
+}
+.nav1 .lang{
+    position: relative;
+    left: 400px;
+    background-color: #05445E;
+}
+
+.marque {
+    background-color: white;
+    color: #05445E;
+    height: 60px;
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.banner img {
+    height: 300px;
+    width: 100%;
+}
+
+.nav2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 20px;
+    height: 30px;
+    background-color: #05445E;
+}
+
+.nav-items1 {
+    display: inline;
+    text-decoration: line;
+    color: white;
+}
+.nav-items1 a{
+    color: beige;
+}
+
+.page2 {
+    height: 150vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.guidelines{
+    height: 300px;
+    position: relative;
+    bottom: 80px;
+    right: 100px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #D4F1F4;
+    border-radius: 1rem;
+    color: #05445E;
+    text-align: left;
+} 
+.guidelines .sidebar{
+    position: relative;
+    bottom: 250px;
+    left: 100px;
+    height: 50%;
+    width: 20%;
+    border-radius: 1rem;
+    padding: 20px;
+    text-align: center;
+}
+.faq {
+    position: relative;
+    bottom: 100px;
+    right: 100px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #D4F1F4;
+    border-radius: 1rem;
+    color: #05445E;
+    text-align: left;
+}
+.news{
+    color: #05445E;
+}
+
+.guidelines h1, .faq h1 {
+    color: #05445E;
+    font-size: 2rem;
+}
+
+.guidelines li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.sidebar a {
+    display: inline-block;
+    width: 90%;
+    height: 50px;
+    position: relative;
+    left: 1080px;
+    background-color: #05445E;
+    color: #D4F1F4;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 1rem;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    opacity: 0.7;
+}
+.page3{
+    height: 80vh;
+    width: 100%;
+    background-color: #05445E;
+}
+.page3 .policy {
+    position: relative;
+    left: 180px;
+    top: 50px;
+    background-color: #94D2E6;
+    padding: 20px;
+    height: 80%;
+    width: 80%;
+    border-radius: 1rem;
+    color: #05445E;
+    text-align: left;
+}
+
+.contact h3 {
+    font-size: 1.5rem;
+}
+
+.contact button {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    color: #333;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.policy h2 {
+    font-size: 2rem;
+    position: relative;
+    left: 800px;
+    bottom: 140px;
+}
+
+.policy a {
+    position: relative;
+    left: 800px;
+    bottom: 140px;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: underline;
+}
+
+.footer {
+    position: relative;
+    right: 20px;
+    bottom: 100px;
+    border-radius: 1rem;
+    background-color: #94D2E6;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer h3, .footer h5, .footer p {
+    color: #05445E;
+}
+
+.footer .social_media ul a {
+    font-size: 2rem;
+    margin: 0 10px;
+    color: #05445E;
+    text-decoration: none;
+}
+

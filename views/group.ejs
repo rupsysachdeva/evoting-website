@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A group registration form for political parties in India">
+    <meta name="keywords" content="group, registration, form, political, party, India">
+    <title>Group Registration Form</title>
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <link rel="icon" href="/static/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <h1>Group Registration Form</h1>
+    </header>
+    <main>
+        <section class="container">
+            <form id="form" action="/group" method="post" enctype="multipart/form-data">
+                <div class="input-box">
+                    <label for="partyname">Party Name</label>
+                    <input type="text" id="partyname" name="partyname" placeholder="Enter party name" autocomplete="off" required/>
+                </div>
+                <div class="input-box">
+                    <label for="partysymbol">Party Symbol</label>
+                    <input type="file" id="partysymbol" name="partysymbol" accept="image/*" required/>
+                </div>        
+                <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;"></div>
+                <div class="alert alert-success" role="alert" id="success" style="display: none;"></div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

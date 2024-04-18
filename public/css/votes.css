@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  .user-info{
+    background-color: rgb(242, 201, 148);
+    height: 300px;
+    width: 100%;
+}
+.user-info h1{
+    text-align: center;
+}
+.user-info img{
+    height: 80px;
+    width: 80px;
+}
+  
+  .voting-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .party-symbol {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
